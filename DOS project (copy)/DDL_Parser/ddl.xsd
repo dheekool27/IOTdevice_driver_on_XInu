@@ -1,0 +1,80 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:complexType name="DDL">
+<xsd:sequence>
+<xsd:element name="Device" type="Device" minOccurs="0" maxOccurs="1" />
+</xsd:sequence>
+<xsd:complexType name="Device">
+<xsd:sequence>
+<xsd:element name="Description" type="Description" minOccurs="1" maxOccurs="1" />
+<xsd:element name="" type="Interface" minOccurs="1" maxOccurs="1" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="Name" minOccurs="1" maxOccurs="1">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string" />
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Device_Type" minOccurs="1" maxOccurs="1">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="Physical" />
+<xsd:enumeration value="Virtual" />
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+
+<xsd:complexType name="Interface">
+<xsd:sequence>
+<xsd:element name="Signal" type="Signal" minOccurs="0" maxOccurs="255" />
+<xsd:element name="Topic" type="Topic" minOccurs="0" maxOccurs="255" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Signal">
+<xsd:sequence>
+<xsd:element name="Operation" minOccurs="1" maxOccurs="1">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="Input" />
+<xsd:enumeration value="Output" />
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Type" minOccurs="1" maxOccurs="1">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="Analog" />
+<xsd:enumeration value="Digital" />
+<xsd:enumeration value="Protocol" />
+<xsd:enumeration value="Logical" />
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="Topic">
+<xsd:sequence>
+<xsd:element name="Type" minOccurs="1" maxOccurs="1">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="Basic" />
+<xsd:enumeration value="Derived" />
+<xsd:enumeration value="Physical" />
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:complexType name="Computation">
+<xsd:sequence>
+<xsd:element name="Type" minOccurs="1" maxOccurs="1">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="Aggregate" />
+<xsd:enumeration value="Formula" />
+<xsd:enumeration value="Map" />
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Expression" minOccurs="0" maxOccurs="1">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string" />
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

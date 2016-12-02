@@ -1,0 +1,146 @@
+list_device_handler[0][0].self =LED_r_0_0;
+
+list_device_handler[0][0].signal_list =  (*uint32)(getmem(sizeof(uint32)* 1));
+
+list_device_handler[0][0].num_signals =1
+
+list_device_handler[0][1].self =LED_r_0_1;
+
+list_device_handler[0][1].signal_list =  (*uint32)(getmem(sizeof(uint32)* 1));
+
+list_device_handler[0][1].num_signals =1
+
+list_device_handler[1][0].self =LED_g_1_0;
+
+list_device_handler[1][0].signal_list =  (*uint32)(getmem(sizeof(uint32)* 1));
+
+list_device_handler[1][0].num_signals =1
+
+list_device_handler[1][1].self =LED_g_1_1;
+
+list_device_handler[1][1].signal_list =  (*uint32)(getmem(sizeof(uint32)* 1));
+
+list_device_handler[1][1].num_signals =1
+
+list_device_handler[2][0].self =LED_b_2_0;
+
+list_device_handler[2][0].signal_list =  (*uint32)(getmem(sizeof(uint32)* 1));
+
+list_device_handler[2][0].num_signals =1
+
+list_device_handler[2][1].self =LED_b_2_1;
+
+list_device_handler[2][1].signal_list =  (*uint32)(getmem(sizeof(uint32)* 1));
+
+list_device_handler[2][1].num_signals =1
+
+list_device_handler[3][0].self =Buzzer_3_0;
+
+list_device_handler[3][0].signal_list =  (*uint32)(getmem(sizeof(uint32)* 1));
+
+list_device_handler[3][0].num_signals =1
+
+list_device_handler[3][1].self =Buzzer_3_1;
+
+list_device_handler[3][1].signal_list =  (*uint32)(getmem(sizeof(uint32)* 1));
+
+list_device_handler[3][1].num_signals =1
+
+list_device_handler[4][0].self =TemperatureSensor_4_0;
+
+list_device_handler[4][0].signal_list =  (*uint32)(getmem(sizeof(uint32)* 1));
+
+list_device_handler[4][0].num_signals =1
+
+list_device_handler[5][0].self =button_5_0;
+
+list_device_handler[5][0].signal_list =  (*uint32)(getmem(sizeof(uint32)* 1));
+
+list_device_handler[5][0].num_signals =1
+
+list_device_handler[6][0].self =detectbrightlig_6_0;
+
+list_device_handler[6][0].signal_list =  (*uint32)(getmem(sizeof(uint32)* 3));
+
+list_device_handler[6][0].num_signals =3
+
+list_device_handler[6][1].self =detectbrightlig_6_1;
+
+list_device_handler[6][1].signal_list =  (*uint32)(getmem(sizeof(uint32)* 3));
+
+list_device_handler[6][1].num_signals =3
+
+bool8 isvaliddevice(uint32 deviceid) {  
+ bool8 result = FALSE;
+ switch(deviceid){ 
+  
+case 0:result=TRUE
+ break;
+case 1:result=TRUE
+ break;
+case 2:result=TRUE
+ break;
+case 3:result=TRUE
+ break;
+case 4:result=TRUE
+ break;
+case 5:result=TRUE
+ break;
+case 6:result=TRUE
+ break;
+case default: 
+ break; 
+ }
+return result; }
+bool8 isvalidtopicforpub(deviceid,topicid)
+{
+value=(deviceid<<8)+topicid;
+bool8 result=FALSE;
+switch(value){
+0 0
+case 0: result=TRUE;
+ break;
+0 1
+case 1: result=TRUE;
+ break;
+1 1
+case 257: result=TRUE;
+ break;
+2 1
+case 513: result=TRUE;
+ break;
+3 1
+case 769: result=TRUE;
+ break;
+5 0
+case 1280: result=TRUE;
+ break;
+6 0
+case 1536: result=TRUE;
+ break;
+case default: break;
+} return result;
+}
+bool8 isvalidtopicforpub(deviceid,topicid)
+{
+value=(deviceid<<8)+topicid;
+bool8 result=FALSE;
+switch(value){
+1 0
+case 256: result=TRUE;
+ break;
+2 0
+case 512: result=TRUE;
+ break;
+3 0
+case 768: result=TRUE;
+ break;
+4 0
+case 1024: result=TRUE;
+ break;
+6 1
+case 1537: result=TRUE;
+ break;
+case default: break;
+} return result;
+}

@@ -1,0 +1,138 @@
+{
+  "DDL": {
+    "Platform": {
+      "Type": "beagleboard",
+		"IPaddress":"172.168.0.50",
+		
+      "Device": [
+        {
+          "Properties": {
+           "Type": "Digital",
+           "Name": "LED",
+           "Id": "0",
+			"Signal":[
+					{
+					"Type": "virtual",
+                    "Mode": " input",
+                    "Name": "LED_r",
+					"Id":"0",
+					"Source": "256,11"
+					
+				    },
+	  				{
+					"Type": "virtual",
+                    "Mode": " input",
+                    "Name": "LED_g",
+					"Id":"0",
+					"Source": "256,5"
+					
+				    },
+				{
+					"Type": "virtual",
+                    "Mode": " input",
+                    "Name": "LED_b",
+					"Id":"0",
+					"Source": "256,6"
+					
+				    }
+				      ]
+               
+          },
+          "Interface": {
+            
+            "Topic": [
+                {
+                  "Name": "LED_r_on",
+				  "Id":"0",
+                  "Mode": "out",
+                  "Returnvalue": "float",
+					"Type":"Publish"
+					
+				},
+                {
+					
+					"Id":"1",
+                  "Name": "LED_r_off",
+                  "Mode": "out",
+					"Type":"Publish"
+					
+					
+                },
+				{
+                  "Name": "LED_g_on",
+				  "Id":"2",
+                  "Mode": "out",
+                  "Returnvalue": "float",
+					"Type":"Publish"
+					
+				},
+                {
+					"Id":"3",
+                  "Name": "LED_g_off",
+                  "Mode": "out",
+					"Type":"Publish"
+					
+					
+                },
+				{
+                  "Name": "LED_b_on",
+				  "Id":"4",
+                  "Mode": "out",
+                  "Returnvalue": "float",
+					"Type":"Publish"
+					
+				},
+                {
+					"Id":"5",
+                  "Name": "LED_b_off",
+                  "Mode": "out",
+					"Type":"Publish"
+					
+					
+                }
+              ]
+            
+          }
+        },
+		  
+		  
+		  
+		  {
+          "Properties": {
+            "Type":"Analog",
+            "Name": "TemperatureSensor",
+            "Id": "4",
+			  "Signal":[
+					{
+						"Id":"0",
+					"Type": "virtual",
+                    "Mode": "input",
+                    "Name": "Sense",
+					
+					"Source":"257,39"
+				}
+				  ]
+          },
+          "Interface": {
+            
+              "Topic": [
+                {
+                  "Name": "readtemp",
+					"Id":"0",
+                  "Mode": "in",
+                  "Returnvalue": "float",
+					"Type":"Subscribe"
+					
+				}	
+              
+            ]
+		  }
+			  
+        }
+		  
+		 
+	
+      ]
+    }
+  }
+}
